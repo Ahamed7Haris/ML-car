@@ -3,113 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-   <style>header{
-    height: 2cm;
-    padding-top: 40px;
-    text-align: center;
-    color: #0b1cb8b0;
-    font-size: large;
-    background-color: #f0e772b0;
-    text-decoration:underline rgb(173, 2, 2);
-    border: 1px double;
-    border-width: 5px;
-    border-radius: 5px;
-}
-label{
-    color: rgba(161, 177, 221, 0.822);
-}
-body{
-    background-color: rgba(10, 2, 80, 0.63);
-    
-}
-main{
-    text-align: center;
-    margin-top: 80px;
-    background-color: rgb(33, 37, 99);
-    height: 450px   ;
-    margin-left: 210px;
-    width: 900px;
-
-    
-    
-}
-input{
-    width: 300px;
-
-    
-    
-}
-footer{
-background-color: rgba(20, 109, 2, 0.63);
-padding-top: 100px;
-width: 100%;
-color: #117e7e44;
-border: 5px double;
-border-radius: 5px;
-color: #01075fb0;
-margin-top: 90px;
-
-}
-main{
-    
-    display: inline-block;
-    vertical-align: top;
-
-   
-    
-
-}
-main img{
-height: 250px;;
-width: 250px;
-
-}
-opt{
-    margin-top: 110px;
-    margin-left: 200px;
-
-}
-  
-
-</style>
-       <header style="font-size: xx-large;font-family: Georgia, 'Times New Roman', Times, serif;;"><b>
-        CAR PRICE PREDICTION USING RPM AND HORSEPOWER</header>
+    <title>Car Price Prediction</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: rgba(10, 2, 80, 0.63);
+        }
+        header {
+            padding-top: 40px;
+            text-align: center;
+            color: #0b1cb8b0;
+            font-size: large;
+            background-color: #f0e772b0;
+            text-decoration: underline rgb(173, 2, 2);
+            border: 1px double;
+            border-width: 5px;
+            border-radius: 5px;
+        }
+        label {
+            color: rgba(161, 177, 221, 0.822);
+        }
+        main {
+            margin-top: 80px;
+            background-color: rgb(33, 37, 99);
+            padding: 20px;
+            border-radius: 5px;
+            color: white;
+        }
+        footer {
+            background-color: rgba(20, 109, 2, 0.63);
+            padding: 20px;
+            margin-top: 90px;
+            color: #01075fb0;
+            border: 5px double;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .opt {
+            background-color: rgba(7, 8, 112, 0.514);
+            margin-top: 10px;
+            padding: 20px;
+            text-align: center;
+            border: 5px solid;
+            border-radius: 5px;
+            color: rgb(219, 217, 230);
+        }
+    </style>
 </head>
-            
-       <body>
-    </b><aside></aside>
-    <main>
-        <img style="margin-top: 3.2cm;float: left;border:  solid;border-radius: 150px;"  src="https://cdn11.bigcommerce.com/s-ta980ko58k/images/stencil/1280x1280/products/3492/23158/sss__59461.1681928723.jpg?c=2" alt="nil">
-        <img style="margin-top: 3.2cm;float: right;height: 260px;" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBUSEhERFRUWGBEREQ8RGBgVFhUYEhERGBQZGRgYGBgcIS4lHB4rIRgYJjgmKy8xNTU1GiQ7QDs0Py40NTEBDAwMEA8QGhISHjQhJCQxMTExNDQ0NDQxMTE/NDU3NDY0NDExNjQ0NDE3MTQ0NjE0NDQ0MTQ0NDQxMT00NDQ0NP/AABEIAKgBKwMBIgACEQEDEQH/xAAbAAABBQEBAAAAAAAAAAAAAAAEAAECAwUGB//EAEUQAAECAgUIBggFAwIHAQAAAAEAAgMRBBIhUWEFEzFBUpGh8AZxgZKx0RQiMkJiosHhU3KCwtIVFvGDsiMkQ0RUk+IH/8QAGQEBAAMBAQAAAAAAAAAAAAAAAAECAwQF/8QAKxEAAgIBAwMCBgMBAQAAAAAAAAECEQMEEiExQVETFCJxgZGhsTJh8PEF/9oADAMBAAIRAxEAPwDtTBn7o3Kp+Tw7UB1NUnR4h0Q97lEsjO1tb3isbNqAo2Q56Hvb+UyVTcmvh++93W9aQoLz7UR3ZMKX9NZrrO63O81O5kbUAtpoh+1PxVjcsMOt/Yw+SOZRWN0NbxVgA1Adk1FommADKIOgP7Wy+iXpjjh1rQ51pc61FimAiOTpfLqCmHt1vcd4RcuripBvVxSyaBAWdfWSnrsGzvRRb1bymzYw3lCAb0ho1t3pektvG9EiCLhvcnqDkuQAhpIw3qOeG0N6NqjklKzkoSBZxm0E4jMHvBF2YppC5ADCkt2gkaW3bHPYiTDFyiYTbkAK6nMHv8FD+oNOgg7kaIbbvBPm28yQAXpgwS9IF/BF+qP8JVhsk9gQAmdZ19iWebd8qLmdg/Kpid3ggAhScD3T5JGmYncfJHVOvgomGLvBAAOpw2j3SoGmi93dctKo0e74JrLuP3QGcKTPW7ulOImL+6fNaNl3FKxAZ2cFzu6piMLnd37o2QSsQAmfHxd37qDqQPi7h80dYmkLuKAz89cH90qVc3O7qPq4DelLqQDMDjfwREKAdZ4Il0ItOiYRMILVRM3LwUNgSVmbRACRarUilmfGhi5BlwF3Patp0IFCPyc0qso30LRlXUAr4J6wRX9KxKQyab1nskX3IDLhhz2pi4YIqJQHDRb1hDPgEahuUNNFk0xphNMXjntUTDwaolgu4oCwHEcVIOx8fJU1RcdyVQ8zQF9ccn7JAjmXkqLR/lLOFAEbkxfzaqaxwTzwG9BRbnOZHyUdPP2Uaw2Uq7bigJVMSnEPHiqi9vxcVDOYnf8AdAE1Td832T9nzIWub+JTh/M0AVJNZjxVAdglv4oC41ceKXqocjE8UpC/gUBfZgmMsOCqmLxuKjbcOKAtIF43BRLBeNwUQCpiaAQYNUuHknkcNwT1seBTh+IQDetyGp7cflThyetggIT6/lTT697fJWVwmrDBAdE9iiGK8hRkugwIBieqpgJSQFdVINU5J5IQMGqUkgnQkiWIaPRQ5FpKAY8ShkalT6O7ZW45qjUVXFFlJmQKK65RfRnDS09i2mhTkmxDcznHMCgYQu4BXZa6RUajzD3Vnj3WSJBxOgLiqd08tObggD43jwWkdNOStLj++DN6qEXTfP8AXJ1vo+H+1IwMCvPInTSkO0Bg6nNn4qs9LKRpIMrxIjwWi0Un3X3KPWxXZ/Y7+C9kRoex02mYmCdIMiMCCCJJiRtcVwDOl8Q6A2d0pH7oSJ04igkeqCCRoCznpnB8mkNQpLhHpNcbbd4Szg2m7wvMHdNo59/cAm/vGkH3zuVPSXkv6j8HqAiC8KTXXEb15d/dsfW9OzpXG2xPqH1UekvI9V+D1QTw3p7cF5ozpdHbpI7QFq0Hpa5xFZrZdRlwmVDxPyT6qO0LMeKbNY8UNQMpQIxDWubXPuuYWk/lmBWWjmhcNwWbi06ZeMlLlFAYL1KoL+IVubF3BPUw4IWspq/F4Jv1Dgr6vMimkOQUIKgfibwUgcW8FZZhxSsu4lAQkMOCVVt6nMXHinDhjxQEA0bSVUbStri9KYwQHQJJkluYDpFMlNAJOopwUBNJRmkgJJppkxKAclMqjEPYg6dlFsNpM/WGq9WUWyHJIOjRmw2l7yA1omSV5/0n6YOdWhwSWttBI9t3bqGCB6T5fiRAWyNQHaPkuCplKLqwJIDhIy09hXdh06S3y5fg4M+eUpbI8eWGlz6Q4yJqA+s+87LPqVe+iwwGMYx1YTLySJEagBKfaSmyXTmFrYcgJWNlYDh14eK0INGJE5WvM+zUspylKVs0hGMVS/6dnQej9DzUOuGPcWNcXl5FYkTsk4SFq5PKBodd4h0ZzQ1zg17YzmuMjKtItKFpuVYcCUNzTXqjQDZMaZzkqqHSWRZyBBAnbK0ckb1VY5Jbn0LvJG6Rh0uAWvc1tmehxGDUK7mkSwBNXsdJAUTKUGEwAUaG95DZvjTiWyEyGnRaNH3XQ5aos4dYe0whw7NPCZ/SuQprZRHEaH+uMK2kdjqw7FOb4oqX0JxcNx+ofT8qNiw2MECDDc0mZhMawPBlKesSlfrWexpkXagQN/8AhVTVwfJgbe4uPgFzm5Jttn1W7kTIj4zXRGmGRDrTY4uL3ENmBKrVt61hscJhbdHpERtGY1k2llJfGDg8MIZm2MeASbwyyVuOhQQzoehFOzkKJBcZmG4PbPYfpHY4E/qXQvocF/tMYcaoB3i1eZUCmRYMR0RhLXuDgTVbIhxmbCJaQNS6XJ/Sl9WT2hztpsge0SRpkM2qRk18Il0Ih7BaWOtcPyk6fHrW7kTLoe2q9xk2wl3ts/PO0t+LSNetywqNl9j/AGi1plrNite9kRwiQ3sEUWzDrHy1O81PVUyE3F2jubLylIYriaRSo74TTAimHEhEksIbUdeBZ7NmgaJ2XLpsk5UEeE15Y5j2iq8ODarnCwlhBtbiqyw1G7NI5rdUaEm3J/VuVeeF3gnDweQsqNbJzbcl6tw4KPOgKDi3X4BAW1W3JiwYbghzEZyAl6QwclRQsuqHVLwSquuG9U+ltuS9Nbcd33ShZ0iShWT1lsZDzSmozSmgJJKFZKsgJpTUKyi56AsL0PHpICppEaSyKTSNNqtGNlZOgimZQlYFzGU6aQHEnRNE0mkLnMrxDIkWrrxQRzZJOgRzs+01XDQudpNGIJB0gomDEdCdWB9Um0XG9bOdZFAc5oJv0EdoXant4fQ4P58p8nMwqMQHP0NbIG0Wz0Wa9CLZSHj2XvAlqcRYtWJk+DEqki0Ey0WW4qRyezbO4FLxvqiX6iSpnOUyE+I+sYjpkNGmdgAA4AJUSK+jms0l1YVZuFarrkRqBkLcFuuyczbHaPuqI1AaAZvZKWufkjhja4IWTJF8oz4+VXxhUJaCCHSqkEyGic9GnQgI+T2vl6xBE925aELJ8MH1XAkHWSPEBEmhk6Kp6ns81EcMNrTomWeW5ONmKMkiYk9n6i6c+CIZkQv0vnbP1RP9yOi0WoJusM3CUrQQZGfaEC+IAbAVSWlxvnoaR1WXp1+aNSjZEY0es0E3uaB4IwZJAtbDhmV9h8FkwMpRgJtivlokXEt7psVoy3EHtAHFoDXddlhWT0vhmq1L7oOfSjB9qjWXtkRwCeF0ogCx0NzeohBRac9wmxwde11jh9EHFo74ntNZ2m3gFjLBkTpK/wBGqz42rbr59TondKaM0AlrpOExMOk4TlZZbaCOxThdNqKLJVcQ0O8iuXOSQ6rXe0hjQxs6zqjASQ0WiyZNmJVzMkQhpLO55uUrTZX2/RV6rCu/4Os/r0KK2syIJXsINX8zHCbe0BBxcux4drHwojRqLQx4GFWxYzMlwbCHEH4Qxp4BXtydBHvP7w8ldaTJ3r7mT12Jefsan98OZDZEewNrvewNrOc+bA0kkAGqPWEp6ZG5Oz/9GZ7zHgfCCfEBV0TJ1HIrVw06DWfIo+HRKCPapDB/rDzVJaRrq0TH/wBCEukWbOTstMpDA9j2ubr0gtNzgZEFHQojnmQqk/mI+i55kLJgMzSGVpSmI7pyusKvbEyY2RFLLbQAWxHn1tQ0G1ZPTpdzeOqvszoRDdrl3p/RSEE3oVmXaJDa1rqRpk0OisiCsbZAvLANRtwWjnWnWFzzi4s6sc1JX0KmwereR9FZmcB3vsphw1JTVDQ3gU4KhNIuVyhOaasoF6hWUkF1ZKsqC9IPQktJUHOSLwqYj0IGjMmFzlPdVcRat5sVY+Wm21leHUrJcHP0qIsiPGtDb1o0xY0QWzOgLsgcsgHKbfXA90tIQMGO5sxceKtptLDnhmMwUK50nTvXQpbonDOO2QQ+nvE5SlO61DupTzabEUGt04BRc5mixBTrkHNIOO8qGcOCseWIZ7hNLI2ovrHDePNHZBk2NnYo/wCFBJinENtA656sFliKJaEqbHq0WIG6Xvhs6wA4nxVJyqLZrij8SRHKvSqPHivewhoJMgADZ28+Cah5QrmrFa0ONgcAAD1gaFktaGDE8fsomIblxxzzUrs756eEo1X17nTGDVmRYNdxF6k1rTMOFtkpXpZLil0MB4k4DXKZbqKZwFYtBtbot0jUvT3qUVJdzyHGSk4vqjVyBkejxXxBEiiG5jA8BxlXMyC23RIgTOKwct+pHdDgPc5gY0gVW1qxE5aNMpGWKKpkPOlr2vcyI0EEjXOU9F8ggHZFcTMxjOdacjOtfOenFcuSGaUri+PnR2Ys2GMUp9f7Vg1PiuYIQD3h5h1niZBrFzpTGqyXZK9CCO8mVd/ectI5BBMzFJJtPqkknepDITNs7vuqe3zvq/yae5066foyq79bnH9R81EuOs/MtoZDh7Tj2BTbkSHe7gE9pk7tfcj3mFdP0YUsQpQjDrGvWqyPsVZk6tNkl0sPJsBlphB2LnOl8pAKKhOht0UeBO8tcTvrJ7N95Io9fDtH9HLPiwQYZhiIS183BxaSWWSlIC3TYjYdKZBqNaa5bHZH9Zjmg1J1WVXC2czPV1zXStyq5vsw4Lepk/ElJ+V4xt/4Y/0YJ4lhR6Tj+QWvt/x/IP0s6ROp7WhkFwHquIZCcGtLZ6LNJmMPVGma9IgRi1jAWycGtBB0gyE5rhKLlukh7ZRJWj2WMaR3QF3LHCQJIrEAm+etc2fFsS5s68GV5G+KovFKdqAT+lvwVFdt/EpVxiuY6jqS9RL1Q6IomItCpe56rL1SXqJiKaIL66RiyQjoqpfHUqJFhb46rMdZ746pdScVbaRuDIlItQlOjVmoR9IQsaNNXjHkq5AVOOlYdJJcDJbsZlYEm5AZpspytXTGJzSlyci9rzFExY3SlTnhpbdJblIhiZs0iS53LdHdMObOzSJq17IvuZOO+SHMYECaqiPA0FZrXP0AOJFwJUXOcLS09oOlZvOvBdaZ+Q/PJZ1Z2d5mpCKo9dFvQYfXTR4k2Bt0QO+UhCCJipV5qJZE4tEwxNSTIUkWy/Tu+809Io5DmMA9YtFhkJmVpme3cnpLvWn8TjvM/qr/AE6pGri0ASmLTIkGYx0LkOxdC6gZQeIgLyRV9QykDV5AWnlCLDe2v69ceqCCyVuisKo13XrDj0rORHPlKsHdZtsJxUodI0tdoNh8/A9i6MUrVNv7nNli09ySf0NCjUu202Sl1KZypD2twJ+ixS8glpxb9FXAYS8NsBn7xA4lbPM00kc/tou5SN05VhjW6f5Sl/V4fxd37rKptDe11aqS1wBm31gDK3QhgwzHqncVV58idUWjpcTSaZu/1lmy7cPNL+st2XcFj27J3FO0HZO4DxCr6+Un2eH/ADNluWm2zhuM9HrgSO4qt2Whsb3fZZoY/Uw8FF1FebZAdf2T1cv+Q9tgXb8mgctHUwbyU7MruIearQGAHQbSTIDTjuBWcKNLS9g/VajmZMdEhsZCD3EuLnOqEMcZSEnCYst16yinkd2yfQxKkkaPRmkxKTSoUOTatas6Q0MbabezivVqq4rofk70O1zC98UAFzCK0Ns/ZqmwjWSHahYu9bAmJg2H4R/Jc2aTk1Z14oqKdAyW5FCj81R/JPmOZLE1MCj5cA9uOzvI0dIoGuM3euNiZAJ0Vx1sYfCSyqVkykQ3GrCe5g0ENa4nsaZre0ZU0ekDpHR/xRvUXdJIG2OK8se6Iz2mPb+aG4eJVJpR5af5K3BFs9Sf0jg7fBDROkEHbC81NKw+U+aiaSOQVNojk9Cf0ghbaqdl+FL21wHpA5reSYxxyXeSncVo7o5fhH35dYKg7LULbC4YxhzPyTGMOSfJWUyNp2tJyyyVj27wsyJlhu0JLnDFHJTZwckK3qso8a7mvFywy/gUDTMqBzZAE9hQmcHJb5pVxyWqrnJ8EqEV2BG0l4nJxaDdYmdGedL+KMzg5ISrhZbUa7mAkuPvDeoFhvHeCPJbyCmIbyCm0bgEMdh3m+ak0uHIRZht5BUTAbgm0biDhWExpHO9NRnlj2uAmWnQpZuWgjePNRLnjQB2OHmoaLKSNGl0xhY0Bga4TLrBO3VYsx8Zh9yRwI8lF7HnVxCiKO65RyLRKuDepCJqrOsxUcw64pejuu4KeSOC1rySBWPWXCQR0Cgl+ikwG/mjlkt7FmZh13BOKO7Z8Ue7yPhOno3RdzxP0qjkXtpFYf7QtKF0De4TNJbL4QXDfWC5OFR6R7jIktHqVxPu6VcMlUmJYYcc/nLwPnVal5J+HwamXeicWjAPYGx2Sm4tmHtP5axJGIJ6ly/pPwM+bzW5Rui0UzrQHYHOw2S+VyOhdEX2Tawfnil3+1gU/NknOUbKLmGs0Mab6jSR1F05di6jItFplMc0vjRIUDW8vLCW3MbMEnHR4I+hdGXslbRRK2ZgPimfW966GjUaK1oBjNs2IIa0DBsyqyfglGvR4cFjWtayEaoABNUuMhKZcRMnEov0v4GnqLVh5uJ+MztYnDIuqJBPXDcq8k8G4Kb8B7JfQqXpg2HbisSUbbgdxw+qX/MbULuj+aUOCFeJsDvFMYkTY4hWB77+d6Vd3I+6sQV51+tjuHmoPk72oc+trSrc4675SnzzruDvJAAvo0I6aOztY1QNEg/gM7jFo+kYD5h9E/pQuHe8wpsUZnolH/Bh9xiY0Oj/AIMLuNP0Wp6U34e81MY7Lm72pbIoy/QaP/48L/1D+KRyZAP/AGzOxkvABahew+43go1WH3GpYoyH5Bozv+3l1OeP3IaL0aox92I3qeP3ArfzTNjnenDGbJ733S2KRyz+jEDVEePzVHeElQ7oszVHHaw/Ry7Co2529MWsvcp3MjajjD0Vuis7WvH0Uf7Td+Izc/8Aiu0LGXu3FRMBmPa1ybmNqOOHRF34sPc/+Cf+0b40Mfpd9QF1porOQU3orNrgPqE3MbUcqOiLf/IZ3B/JTb0RZrjjsY3+a6b0Vup/+z+Ki6i/HwZ9Am5jajnW9Eof4xPYB9SpDojC/Ef3gP2rdNEO2N3kVH0M7Tfn/ko3MnajIb0UhDXW63u+klYOi0HYB/1H/wAlpehvvZvf/JL0R/w73eaWxSAG9GYQ/wCkO+D4qbej7Bogt3Qz+xHejP2R3j5J80/ZPfH8EtikCtyRLRCA6ms+jFYKI8aA8dX2aFdJ+w7vj+KcPcPcf2PUElBo8Xaibz5hRMGIPffv/wDtFZw7MXvfdPnnXxB1yP70AHm4m2/x/enGe2n9wH9yL9IO24dbQf3pCLP/AKh7nlNACV4t57n+U1eJtD/1/wDwjQ47c/0P/ikXP2m9rXj9ikAWfePfHdcPBiXpTx77e0P/AII2u7bZ8/1amzh24fel4hACCnxNT2ds/IKXp8Xahbz5omvP34J/WxPUwhd5iAI7OKQ6iqKzsN6aucN6gBNfA8U2cwdvKorm7imzhuQF+c696cRcfFD5w7J4JjE+E7gpATncQlnBe3cENnBcdyRiBQAis25vPYn9W4c9iGrhOHhSAiQuCYsHJVAd1cE9bq3BAW5vHx80xh4lVF3VuTHnSgLCw7R+XyTVTtHgq5nHelWPxb0BZVN/O9K3kHzVVc/Enzp+LcgLaxw4pq5u4/ZVGkJZ8XjcEBZnOZ/ZPXHJCrEYYJZ0YIC2Yu4NTyF3AKrONuHPakHi4b0BcALuCcEDUfmVOcCWcGPPYgL84Mfn8khFbtHvFVCLg7eVIRevegLK7b+P3T1m7Q4KoP5sSri4cPJAXVhf4JG3Wqpi4cE8xhwQEzCB1eCQgC4bmqFfkf5SDxeUBZmsPBPm+v5vNVVhtcPunn8XigJGH18fNRzeHBPX+LiUs5iN5QGZN3Mkq7uSmSQD1zyfskYnVwSSQCETmTfNTETmzzSSQCzpx3JZ/r3FJJAL0gXp88LxuSSQD5wYJ64w3hJJAOHjDe3zTzGG/wC6ZJAS50nzSl17ykkgGLcDv+yjV6+exJJAOG4+CeqUkkArLkpi7xTJIBVRyU9QY70ySAepj4JVTf4JkkAvWTSdckkgFWdcmL3XJJICOcds+KWeOyeKSSAfO4FPnBj2gpJICJii/wAQlneZpJICQidaevjw+6SSA//Z" alt="nil">
-        <form action="/" method="post">
-
-            <label for="RPM">Enter the peak RPM of the car:</label>
-            <input type="number" id="RPM" min="0" max="10000" name="RPM"><br><br>
-            <label for="horse">Enter the horsepower of the car:</label>
-            <input type="number" name="horse" min="0" max="1000" id="horse"><br><br>
-            <label for="horse">Enter the carwidth of the car:</label>
-            <input type="number"width" id="width"><br><br>
-            <label for="horse">Enter the engine size of the car:</label>
-            <input type="number" name="size"  id="size"><br><br>
-            <label for="horse">Enter the engine stroke of the car:</label>
-            <input type="number" name="stroke"  id="stroke"><br><br>
-            <label for="horse">Enter the city mileage of the car:</label>
-            <input type="number" name="city"  id="city"><br><br>
-            <label for="horse">Enter the highway mileage of the car:</label>
-            <input type="number" name="high"  id="high"><br><br>
-            <label for="horse">Enter the curb weight of the car:</label>
-            <input type="number" name="wght"  id="wght"><br><br>
-   
-            <input type="submit"  style="width: 100px;" value="Submit" name="Submit">    
+<body>
+    <header class="container-fluid text-center py-4">
+        <h1 class="font-weight-bold">CAR PRICE PREDICTION USING RPM AND HORSEPOWER</h1>
+    </header>
+    <main class="container mt-5 p-4">
+        <form action="/" method="post" class="mx-auto">
+            <div class="form-group">
+                <label for="RPM">Enter the peak RPM of the car:</label>
+                <input type="number" class="form-control" id="RPM" name="RPM" min="0" max="10000">
+            </div>
+            <div class="form-group">
+                <label for="horse">Enter the horsepower of the car:</label>
+                <input type="number" class="form-control" id="horse" name="horse" min="0" max="1000">
+            </div>
+            <div class="form-group">
+                <label for="width">Enter the car width:</label>
+                <input type="number" class="form-control" id="width" name="width">
+            </div>
+            <div class="form-group">
+                <label for="size">Enter the engine size of the car:</label>
+                <input type="number" class="form-control" id="size" name="size">
+            </div>
+            <div class="form-group">
+                <label for="stroke">Enter the engine stroke of the car:</label>
+                <input type="number" class="form-control" id="stroke" name="stroke">
+            </div>
+            <div class="form-group">
+                <label for="city">Enter the city mileage of the car:</label>
+                <input type="number" class="form-control" id="city" name="city">
+            </div>
+            <div class="form-group">
+                <label for="high">Enter the highway mileage of the car:</label>
+                <input type="number" class="form-control" id="high" name="high">
+            </div>
+            <div class="form-group">
+                <label for="wght">Enter the curb weight of the car:</label>
+                <input type="number" class="form-control" id="wght" name="wght">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-        
-        
     </main>
     {% if rpm %}
-        <section class="opt" style="background-color: rgba(7, 8, 112, 0.514);margin-left: 210px;width: 900px;margin-top: 10px;height: 60px;text-align: center;border: 5px solid;color: rgb(219, 217, 230);border-radius: 5px;">Received RPM: {{ rpm }}<br>Received horsepower: {{ horsepower }}<br>Received predictiion: {{ pred }}</section>
-        {% endif %}
-    </body>
-    <footer>
+        <section class="opt container mt-4">
+            Received RPM: {{ rpm }}<br>
+            Received horsepower: {{ horsepower }}<br>
+            Received prediction: {{ pred }}
+        </section>
+    {% endif %}
+    <footer class="container-fluid text-center">
+        Footer content goes here.
     </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
 </html>
