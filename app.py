@@ -8,42 +8,25 @@ from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 import time
 import numpy as np
-
 app = Flask(__name__)
-
-# Load data
 data = pd.read_csv("C:\\Users\\User\\Desktop\\ML-car-main\\ML-car-main\\ML\\CarPrice_Assignment.csv")
-
-# Select features and target variable
 X = data[['peakrpm', 'horsepower', 'carwidth', 'enginesize', 'stroke', 'citympg', 'highwaympg', 'curbweight']]
 y = data['price']
-
-# Split data into train and test sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-# Define preprocessing pipeline
 numeric_features = X.select_dtypes(include=['int64']).columns
 preprocessor = Pipeline([
     ('imputer', SimpleImputer(strategy='median')),
 ])
-
-# Fit the preprocessor on the training data
 preprocessor.fit(X_train[numeric_features])
-
-# Define the model pipeline
 model = Pipeline([
     ('preprocessor', preprocessor),
     ('scaler', StandardScaler()),
     ('regressor', HistGradientBoostingRegressor())
 ])
-
-# Measure training time
 start_time = time.time()
 model.fit(X_train, y_train)
 training_time = time.time() - start_time
 print(f"Training Time: {training_time:.2f} seconds")
-
-# Model Evaluation
 y_pred = model.predict(X_test)
 mae = mean_absolute_error(y_test, y_pred)
 mse = mean_squared_error(y_test, y_pred)
@@ -54,13 +37,9 @@ print(f"Mean Absolute Error (MAE): {mae:.2f}")
 print(f"Mean Squared Error (MSE): {mse:.2f}")
 print(f"Root Mean Squared Error (RMSE): {rmse:.2f}")
 print(f"R-squared (R²) score: {r2:.2f}")
-
-# Cross-Validation
 cv_scores = cross_val_score(model, X, y, cv=5, scoring='r2')
 print(f"Cross-validated R² scores: {cv_scores}")
 print(f"Average R² score: {cv_scores.mean():.2f}")
-
-# Measure prediction time for a single instance
 start_time = time.time()
 y_pred_single = model.predict([X_test.iloc[0]])  # Predicting on a single test instance
 prediction_time = time.time() - start_time
