@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Price Prediction</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: #121212;
+            font-family: 'Arial', sans-serif;
+            color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            position: relative;
+        }
+        header {
+            background: rgba(0, 0, 0, 0.85);
+            padding: 30px 0;
+            text-align: center;
+            color: #ffcc00;
+            font-size: 2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            margin-bottom: 20px;
+        }
+        main {
+            margin-top: 20px;
+            background: rgba(30, 30, 30, 0.95);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+        main:hover {
+            transform: translateY(-5px);
+        }
+        label {
+            color: #ffcc00;
+            font-size: 1.1rem;
+        }
+        input.form-control {
+            background: rgba(50, 50, 50, 0.9);
+            color: #f0f0f0;
+            border: 1px solid #ffcc00;
+        }
+        input.form-control:focus {
+            border-color: #ff9900;
+            box-shadow: 0 0 10px #ff9900;
+        }
+        .btn-custom {
+            background: #ff9900;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .btn-custom:hover {
+            background: #ffcc00;
+            color: #000;
+        }
+        .car-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        .car-container img {
+            max-width: 300px;
+            animation: moveCar 8s infinite linear;
+        }
+        .smoke {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: rgba(128, 128, 128, 0.7);
+            border-radius: 50%;
+            opacity: 0.5;
+            animation: smokeRise 5s infinite;
+            pointer-events: none;
+        }
+        .smoke:nth-child(2) { animation-delay: 1s; left: 20px; }
+        .smoke:nth-child(3) { animation-delay: 2s; left: -20px; }
+        .smoke:nth-child(4) { animation-delay: 3s; left: 40px; }
+        
+        @keyframes moveCar {
+            0% { transform: translateX(-20px); }
+            50% { transform: translateX(20px); }
+            100% { transform: translateX(-20px); }
+        }
+        @keyframes smokeRise {
+            0% {
+                opacity: 0.5;
+                transform: translateY(0) scale(0.5);
+            }
+            50% {
+                opacity: 0.3;
+                transform: translateY(-30px) scale(0.8);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-60px) scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Car Price Prediction
+    </header>
+    <main class="container mt-5 p-4">
+        <div class="car-container">
+            <!-- <img src="CAR.jpg"alt="Car Image"> -->
+            <div class="smoke"></div>
+            <div class="smoke"></div>
+            <div class="smoke"></div>
+            <div class="smoke"></div>
+        </div>
+        <form action="/" method="post" class="mx-auto">
+            <div class="form-group">
+                <label for="RPM">Enter the peak RPM of the car:</label>
+                <input type="number" class="form-control" id="RPM" name="RPM" min="0" max="10000">
+            </div>
+            <div class="form-group">
+                <label for="horse">Enter the horsepower of the car:</label>
+                <input type="number" class="form-control" id="horse" name="horse" min="0" max="1000">
+            </div>
+            <div class="form-group">
+                <label for="width">Enter the car width:</label>
+                <input type="number" class="form-control" id="width" name="width">
+            </div>
+            <div class="form-group">
+                <label for="size">Enter the engine size of the car:</label>
+                <input type="number" class="form-control" id="size" name="size">
+            </div>
+            <div class="form-group">
+                <label for="stroke">Enter the engine stroke of the car:</label>
+                <input type="number" class="form-control" id="stroke" name="stroke">
+            </div>
+            <div class="form-group">
+                <label for="city">Enter the city mileage of the car:</label>
+                <input type="number" class="form-control" id="city" name="city">
+            </div>
+            <div class="form-group">
+                <label for="high">Enter the highway mileage of the car:</label>
+                <input type="number" class="form-control" id="high" name="high">
+            </div>
+            <div class="form-group">
+                <label for="wght">Enter the curb weight of the car:</label>
+                <input type="number" class="form-control" id="wght" name="wght">
+            </div>
+            <button type="submit" class="btn btn-custom">Submit</button>
+        </form>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
